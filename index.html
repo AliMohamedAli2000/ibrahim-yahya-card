@@ -179,8 +179,9 @@
   .card h1      { animation-delay: 0.22s; }
   .card .title  { animation-delay: 0.30s; }
   .card .pulse  { animation-delay: 0.38s; }
-  .card .panel  { animation-delay: 0.46s; }
-  .card footer  { animation-delay: 0.56s; }
+  .card .skills { animation-delay: 0.46s; }
+  .card .panel  { animation-delay: 0.54s; }
+  .card footer  { animation-delay: 0.62s; }
 
   @keyframes rise {
     from { opacity: 0; transform: translateY(10px); }
@@ -277,6 +278,57 @@
 
   @media (prefers-reduced-motion: reduce) {
     .pulse path { animation: none; stroke-dashoffset: 0; }
+  }
+
+  .skills {
+    text-align: start;
+    margin-bottom: 24px;
+  }
+
+  .skill-group { margin-bottom: 14px; }
+  .skill-group:last-child { margin-bottom: 0; }
+
+  .skill-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.63rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 9px;
+  }
+
+  .skill-label .bar {
+    width: 14px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--glow);
+    box-shadow: 0 0 6px color-mix(in srgb, var(--glow) 70%, transparent);
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .chip {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text);
+    background: color-mix(in srgb, var(--surface-2) 92%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 13px;
+    white-space: nowrap;
+    transition: border-color 0.18s ease, transform 0.18s ease;
+  }
+
+  .chip:hover {
+    border-color: color-mix(in srgb, var(--accent-2) 55%, var(--border));
+    transform: translateY(-1px);
   }
 
   .panel {
@@ -448,6 +500,28 @@
     <svg class="pulse" viewBox="0 0 300 22" preserveAspectRatio="none" aria-hidden="true">
       <path d="M0,11 L70,11 L84,3 L98,19 L112,11 L130,11 L140,2 L150,20 L160,11 L300,11" />
     </svg>
+
+    <div class="skills">
+      <div class="skill-group">
+        <span class="skill-label"><span class="bar"></span>Technical Expertise</span>
+        <div class="chips">
+          <span class="chip">Laser &amp; IPL Systems</span>
+          <span class="chip">RF &amp; HIFU Devices</span>
+          <span class="chip">Body Contouring Tech</span>
+          <span class="chip">Installation &amp; Calibration</span>
+          <span class="chip">Maintenance &amp; Troubleshooting</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <span class="skill-label"><span class="bar"></span>Commercial Expertise</span>
+        <div class="chips">
+          <span class="chip">Clinical Demonstrations</span>
+          <span class="chip">Staff Training</span>
+          <span class="chip">After-Sales Support</span>
+          <span class="chip">Clinic Partnerships</span>
+        </div>
+      </div>
+    </div>
 
     <div class="panel">
       <a class="readout" href="tel:+201018019245" id="callBtn">
